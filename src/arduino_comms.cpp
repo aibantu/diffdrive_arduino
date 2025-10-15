@@ -65,10 +65,10 @@ void ArduinoComms::readPositionsAndSpeeds(double &pos_1, double &pos_2, double &
     // 检查是否成功解析出4个数据（容错处理）
     if (tokens.size() != 4) {
         // 解析失败时可设置默认值或报错
-        pos_1 = 0.0;
-        pos_2 = 0.0;
-        vel_1 = 0.0;
-        vel_2 = 0.0;
+        // pos_1 = 0.0;
+        // pos_2 = 0.0;
+        // vel_1 = 0.0;
+        // vel_2 = 0.0;
         // 可选：输出错误日志
         // std::cerr << "数据格式错误，期望4个数值，实际得到" << tokens.size() << "个" << std::endl;
         return;
@@ -86,13 +86,6 @@ void ArduinoComms::setMotorValues(double val_1, double val_2)
     std::stringstream ss;
     ss << "s " << val_1 << " " << val_2 << "\r";
     sendMsg(ss.str(), false);
-}
-
-void ArduinoComms::setPidValues(float k_p, float k_d, float k_i, float k_o)
-{
-    std::stringstream ss;
-    ss << "u " << k_p << ":" << k_d << ":" << k_i << ":" << k_o << "\r";
-    sendMsg(ss.str());
 }
 
 std::string ArduinoComms::sendMsg(const std::string &msg_to_send, bool print_output)

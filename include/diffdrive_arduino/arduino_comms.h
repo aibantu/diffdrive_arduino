@@ -20,7 +20,6 @@ public:
   void readPositionsAndSpeeds(double &pos_1, double &pos_2, double &vel_1, double &vel_2);
   // void readSpeeds(double &val_1, double &val_2);
   void setMotorValues(double val_1, double val_2);
-  void setPidValues(float k_p, float k_d, float k_i, float k_o);
 
   bool connected() const { return serial_conn_.isOpen(); }
 
