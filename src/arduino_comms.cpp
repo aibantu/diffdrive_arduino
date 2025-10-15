@@ -24,18 +24,18 @@ void ArduinoComms::sendEmptyMsg()
 
 
 
-void ArduinoComms::readPositionsAndSpeeds(double &pos_1, double &pos_2, double &vel_1, double &vel_2)
-{
-    std::string response = sendMsg("j\r");
+// void ArduinoComms::readPositionsAndSpeeds(double &pos_1, double &pos_2, double &vel_1, double &vel_2)
+// {
+//     std::string response = sendMsg("j\r");
 
-    std::string delimiter = " ";
-    size_t del_pos = response.find(delimiter);
-    std::string token_1 = response.substr(0, del_pos);
-    std::string token_2 = response.substr(del_pos + delimiter.length());
+//     std::string delimiter = " ";
+//     size_t del_pos = response.find(delimiter);
+//     std::string token_1 = response.substr(0, del_pos);
+//     std::string token_2 = response.substr(del_pos + delimiter.length());
 
-    pos_1 = std::atoi(token_1.c_str());
-    pos_2 = std::atoi(token_2.c_str());
-}
+//     pos_1 = std::atoi(token_1.c_str());
+//     pos_2 = std::atoi(token_2.c_str());
+// }
 
 
 void ArduinoComms::readPositionsAndSpeeds(double &pos_1, double &pos_2, double &vel_1, double &vel_2)
